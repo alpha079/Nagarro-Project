@@ -16,12 +16,12 @@
     </h1>
     <a href="/article/new " class="btn btn-success">Add New Task</a>
 
-    <% articles.forEach(article => { %>
+    <% task.forEach(task => { %>
         <div class="card mt-4">
             <div class="card-body">
-                <h4 class="card-title"><%= article.Title%></h4>
-             <div class="card-subtitle text-muted mb-2"><%= article.DueDate.toLocaleDateString()%></div>
-             <div class="card-text mb-2"><%= article.Description%></div>
+                <h4 class="card-title"><%= task.Title%></h4>
+             <div class="card-subtitle text-muted mb-2"><%= task.DueDate.toLocaleDateString() %></div>
+             <div class="card-text mb-2"><%= task.Description %></div>
             </div>
             
         </div>

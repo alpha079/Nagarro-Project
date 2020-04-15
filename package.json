@@ -1,17 +1,27 @@
 {
-  "name": "Project",
+  "name": "project2",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "devStart": "nodemon server.js"
+    "devStart": "nodemon server.js",
+    "start": "node server.js"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.0.2",
     "express": "^4.17.1",
-    "mongoose": "^5.9.7"
-  }
+    "sequelize": "^5.21.6",
+    "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/void2311/Nagarro-Project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/void2311/Nagarro-Project/issues"
+  },
+  "homepage": "https://github.com/void2311/Nagarro-Project#readme",
+  "description": ""
 }

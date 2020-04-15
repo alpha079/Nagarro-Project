@@ -1,12 +1,14 @@
 const  express = require('express');
 const app= express();
 const articleRouter = require('./routes/article');
+const { db,todos } = require('./db')
 
 app.set('view engine','ejs')
-app.use('/article',articleRouter)  //now every route is created at the end of /article/...
-
-const articles= [{
-    Title: 'Test Task',
+app.use(express.urlencoded({ extended: false }))
+  //now every route is created at the end of /article/...
+  app.use('/article',articleRouter);
+  const task= [{
+    Title: ' Task 1',
     Description: 'Do Coding',
     DueDate: new Date,
     Status: 'Complete',
@@ -14,7 +16,7 @@ const articles= [{
     Notes: 'Hi , Do Coding EveryDay'
 },
 {
-    Title: 'Test Task 2',
+    Title: 'Task 2',
     Description: 'Do Coding',
     DueDate: new Date,
     Status: 'Complete',
@@ -23,7 +25,13 @@ const articles= [{
 }]
 app.get('/',(req,res) =>
 {
-    res.render('articles/index',{ articles: articles });
+    res.render('articles/index',{ task: task });
+})
+db.sync().then(() => {
+    app.listen(3000)
+}).catch((err) => {
+    console.error(err)
 })
 
-app.listen(5000);
+
+
